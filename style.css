@@ -25,10 +25,6 @@ html {
       text-align: center;
       color: #EADBB2;
     }
-    .blinking {
-      animation: opacity 1s ease-in-out infinite;
-      opacity: 1;
-    }
 
     h3 {
       font-size: 1.5em;
