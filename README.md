@@ -1,6 +1,3 @@
 # 0kron.github.io
-Kron Start Page, to replace Brave's NewTab. 
-
-
-
-and fuk firefox :(
+Página personal usando GitHubPages. 
+> solo por que se puede.
