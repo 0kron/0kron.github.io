@@ -1,113 +1,83 @@
-:root {
-    --color-bg: #282828;
-    --color-fg: #EADBB2;
-    --color-link: #8F9191;
-    --color-link-visited: #668F8B;
-    --color-link-hover: #FA7921 ;
-}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
-html, body {
-  background: var(--color-bg);
-  color: var(--color-fg);
-  font-family: "Fira Code";
+html {
+      background-color: #1a1b26;
+      align-items: center;
+      color: #ebdbb2;
+      display: flex;
+      font-family: 'Ubuntu Mono', monospace;
+      font-size: 25px;
+      height: 100%;
+      justify-content: center;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      margin: 1em;
+      padding: 1em;
+    }
+
+    h1 {
+      font-size: 2em;
+      grid-column: 1 / -1;
+      margin: 0;
+      text-align: center;
+      color: #ff7a93;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus,
+    a:hover {
+      color: #a9b1d6;
+    }
+
+    nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 0 1em;
+      min-width: 24em;
+      padding: 1em 0;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+    }
+
+    li:first-child {
+      font-weight: bold;
+      line-height: 2em;
+      color: #ad8ee6;
+    }
+
+    img {
+      border: 2px solid #ebdbb2;
+      height: auto;
+      object-fit: cover;
+      object-position: 50% 100%;
+      width: 10em;
+    }
+
+input {
+  background-color: unset;
+  font: 16px 'Ubuntu Mono', monospace;
+  color: #ebdbb2;
   height: 100%;
   width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: 1fr 460px 600px 1fr;
-  grid-template-areas:
-    ". left right .";
-  column-gap: 80px;
-  justify-items: center;
-  align-items: center;
-  min-height: 100%;
-}
-
-.left-container {
-  grid-area: left;
-  aspect-ratio: 1/1;
-}
-
-.right-container {
-  grid-area: right;
-  height: 50%;
-  width: 100%;
-}
-
-.gif img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 40px;
-  padding-top: 60px;
-}
-
-.category {
-  display: flex;
-  flex-direction: column;
-  width: 180px;
-}
-
-.bookmarks {
-  display: flex;
-  justify-content: center;
-}
-
-.links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.title {
-  font-size: 20px;
-}
-
-li {
-  font-size: 16px;
-  list-style-type: none;
-  padding: 5px
-}
-
-a:link {
-  text-decoration: none;
-  color: var(--color-link);
-}
-
-a:visited {
-  color: var(--color-link-visited);
-}
-
-a:hover {
-  color: var(--color-link-hover);
-}
-
-.blinking {
-  animation: opacity 1s ease-in-out infinite;
-  opacity: 1;
-}
-
-@keyframes opacity {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+  border-top-style: hidden;
+  border-bottom-style: soild;
+  border-left-style: hidden;
+  border-right-style: hidden;
+  border-bottom-color: #ff9e64;
+  text-align: center;
+  margin-top: 50px;
+  outline: 0;
+  padding-bottom: 0.5em;
 }
