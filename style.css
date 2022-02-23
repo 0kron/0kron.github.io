@@ -25,6 +25,10 @@ html {
       text-align: center;
       color: #EADBB2;
     }
+    .blinking {
+      animation: opacity 1s ease-in-out infinite;
+      opacity: 1;
+    }
 
     h3 {
       font-size: 1.5em;
@@ -48,7 +52,7 @@ html {
       display: grid;
       grid-template-columns: 1fr 1fr;
       margin: 0 1em;
-      min-width: 24em;
+      min-width: 17em;
       padding: 1em 0;
     }
 
@@ -91,4 +95,3 @@ input {
   outline: 0;
   padding-bottom: 0.5em;
 }
-
