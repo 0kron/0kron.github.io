@@ -22,7 +22,7 @@ html {
       grid-column: 1 / -1;
       margin: 0;
       text-align: center;
-      color: #EADBB2;
+      color: #b2eaea;
     }
     .blinking {
       animation: opacity 1s ease-in-out infinite;
@@ -44,7 +44,7 @@ html {
 
     a:focus,
     a:hover {
-      color: #668f8b;
+      color: #e6e6e6;
     }
 
     nav {
@@ -69,32 +69,24 @@ html {
     }
 
     img {
-      border: 2px solid #EADBB2;
+      border: 2px solid #b2d6ea;
       height: auto;
       object-fit: cover;
       object-position: 50% 100%;
       
     }
     table {
-      display: grid;
-      grid-template-columns: 3fr 0fr;
-      margin: 5 5em;
-      padding: 1em 1;
       text-align: left;  
     }
-    
     th {
       font-weight: bold;
-      line-height: 2em;
       color: #668f8b;
-      width: 200px;
       text-align: center;
-      font-weight: normal;
     }
     p {
       font-weight: normal;
       line-height: 0em;
-      color: #EADBB2;
+      color: #bdeeeb;
     }
     
 
