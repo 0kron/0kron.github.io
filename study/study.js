@@ -321,7 +321,7 @@ function fStorage(value_init, side){
             res = aux / Math.pow(10, 12);
             break; 
     }
-    return res % 1 == 0 ? res : res.toFixed(4);
+    return res % 1 == 0 ? res : res.toFixed(6);
 }
 
 function fAngle(value_init, side){
