@@ -158,7 +158,7 @@ document.getElementById("convert_type").oninput = function(){
             break; 
     }
     document.getElementById("in_left").value = 0; 
-    document.getElementById("in_right").value = 0; 
+    document.getElementById("in_right").value = 0;
 }
 
 // Utility - Alterner and Operators
@@ -204,7 +204,7 @@ function fLength(value_init, side){
             aux = value_init;
             break;
         case "cm": 
-            aux = value_init * 100;
+            aux = value_init / 100;
             break; 
         case "km": 
             aux = value_init * 1000; 
@@ -224,7 +224,7 @@ function fLength(value_init, side){
             res = aux;
             break;
         case "cm": 
-            res = aux / 100;
+            res = aux * 100;
             break; 
         case "km": 
             res = aux / 1000 ; 
