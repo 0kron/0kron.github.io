@@ -289,15 +289,17 @@ function fStorage(value_init, side){
             aux = value_init;
             break; 
         case "kb": 
-            aux = value_init * 1000; 
+            aux = value_init * Math.pow(10, 3); 
             break; 
         case "mb": 
-            aux = value_init * 1000000; 
+            aux = value_init * Math.pow(10, 6); 
             break;
         case "gb": 
-            aux = value_init * 1000000000; 
+            aux = value_init * Math.pow(10, 9);
+            break;
         case "tb":
-            aux = value_init * 1000000000000;
+            aux = value_init * Math.pow(10, 12);
+            break; 
     }
     switch(document.getElementById(`convert_unit_${counter(side)}`).value){
         case "bit":
@@ -307,15 +309,17 @@ function fStorage(value_init, side){
             res = aux;
             break; 
         case "kb": 
-            res = aux / 1000; 
+            res = aux / Math.pow(10, 3); 
             break; 
         case "mb": 
-            res = aux / 1000000; 
+            res = aux / Math.pow(10, 6); 
             break;
         case "gb": 
-            res = aux / 1000000000; 
+            res = aux / Math.pow(10, 9);
+            break; 
         case "tb":
-            res = aux / 1000000000000;
+            res = aux / Math.pow(10, 12);
+            break; 
     }
     return res % 1 == 0 ? res : res.toFixed(4);
 }
