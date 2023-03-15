@@ -19,6 +19,7 @@
         h1 {
             font-size: 50px;
             font-weight: 900;
+            line-height: 0px;
         }
         h3 {
             font-size: 24px;
@@ -78,7 +79,8 @@
         }
         label{
             display: block;
-            font-size: 50px;
+            font-weight: 400;
+            font-size: 18px;
         }
         input {
             background-color: #eeeeee;
@@ -109,6 +111,9 @@
         }
         select:hover{
             border: 3px solid #555;
+        }
+        td {
+            height: 5px;
         }      
     </style>
 </head>
@@ -116,24 +121,22 @@
     <!--Título-->
     <div style="width: 97vw; height: 90vh; margin: 0; display: flex; align-items: center;">
         <div style="width: 85vw; margin: 0 auto; overflow: auto;">
-        <br><br>
         <table width="100%">
             <tr>
-                <td align="left"><h1>artikel?</h1></td>
-                <td align="right"><h3>por OKron</h3></td>
-
+                <th style="text-align: left;"><h1>artikel?</h1><label id="library">K6▼</label></th>
+                <th align="right"><h3>por OKron</h3></th>
             </tr>
         </table>
-        <!--COUNTER-->
-        <hr>
+        <br>
+        <hr>        <!--COUNTER-->
         <br>
         <br>
         <table width="100%">
             <tr>
-                <td><label id="adjektiv" style="font-weight: 700;">Wort</label></td>
+                <td><label id="wort" style="font-weight: 700; font-size: 38px;">Wort</label></td>
             </tr>
             <tr>
-                <td><label id="adjektiv" style="font-size: 24px; font-style: italic;">Significado</label></td>
+                <td><label id="sig" style="font-size: 24px; font-style: italic;">Significado</label></td>
             </tr>
             <tr>
                 <td><br><br></td>
@@ -142,10 +145,13 @@
                 <td><button id="der" class="derButton">Der</button></td>
             </tr>
             <tr>
+                <td><button id="die" class="dieButton">Die</button></td>
+            </tr>
+            <tr>
                 <td><button id="das" class="dasButton">Das</button></td>
             </tr>
             <tr>
-                <td><button id="die" class="dieButton";">Die</button></td>
+                <td><label id="gelernen" style="font-size: 18px; font-style: italic; padding-top: 15px;">Gelernt 0/100</label></td>
             </tr>
         </table>
         <br>
@@ -154,6 +160,6 @@
 	<br><br><br>
     </div>
     </div>
-    <script src="wortelernen.js"></script>
+    <script src="worterlernen.js"></script>
 </body>
 </html>
