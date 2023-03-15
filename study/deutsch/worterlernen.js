@@ -30,9 +30,34 @@ let k6_worter = [
     ["Risiko/Risiken", "Riesgo", 1, 0],
     ["Übersetzerin", "Traductor", 2, 0],
     ["Chirurg", "Cirujano", 0, 0],
-
+    ["Herz", "Corazón", 1, 0],
+    ["Oberärztin", "Médico Adjunto", 2, 0],
+    ["Leiter", "Gerente/Director", 0, 0],
+    ["Lastwagen/Lkw", "Camión", 0, 0],
+    ["Freiheit", "Libertad", 2, 0],
+    ["Telefonat", "Llamada", 1, 0],
+    ["Anrufbeantworter", "Buzón de Voz", 0, 0],
+    ["Blatt", "Hoja", 1, 0],
+    ["Arbeitstag", "Jornada Laboral", 0, 0],
+    ["Betrieb", "Empresa", 0, 0],
+    ["Fabrik", "Fábrica", 2, 0],
+    ["Maschine", "Máquina", 2, 0],
+    ["Roboter", "Robot", 0, 0],
+    ["Digitalisierung", "Digitalización", 2, 0],
+    ["Austausch", "Intercambio", 0, 0],
+    ["Zusammenarbeit", "Cooperación", 2, 0],
+    ["Wissen", "Conocimiento", 1, 0],
+    ["Kompetenz", "Competencia", 2, 0],
+    ["Hausarbeit", "Tareas Domésticas", 2, 0],
+    ["Bier", "Cerveza", 1, 0],
+    ["Schritt", "Paso", 0, 0],
+    ["Freiertag", "Vacaciones", 0, 0],
+    ["Jahrhundert", "Siglo", 1, 0],
+    ["Verkehrsmittel", "Medio de Transporte", 1, 0],
+    ["Fahrer", "Conductor", 0, 0],
 ];
 
+let k6_lernen = [];
 let k6_gelernt = [];
 
 document.getElementById("der").onclick = function(){
