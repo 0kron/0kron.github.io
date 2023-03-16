@@ -98,12 +98,7 @@ function check(art){
     document.getElementById("der").disabled = true; 
     document.getElementById("das").disabled = true; 
     document.getElementById("die").disabled = true; 
-    document.getElementById("der").style.color = "#808080"; 
-    document.getElementById("das").style.color = "#808080"; 
-    document.getElementById("die").style.color = "#808080";
-    document.getElementById("der").style.border= "3px solid #808080";
-    document.getElementById("das").style.border= "3px solid #808080";
-    document.getElementById("die").style.border= "3px solid #808080";
+
     if (art == c_artikel){
         w_lernen[past_ind][3]++;
         document.getElementById("topBar").style.border = "7px solid #00ff00";
@@ -125,12 +120,6 @@ function check(art){
         document.getElementById("der").disabled = false; 
         document.getElementById("das").disabled = false; 
         document.getElementById("die").disabled = false;
-        document.getElementById("der").style.color = "#1E90FF"; 
-        document.getElementById("das").style.color = "#7FFF00"; 
-        document.getElementById("die").style.color = "#DC143C";
-        document.getElementById("der").style.border= "3px solid #1E90FF";
-        document.getElementById("das").style.border= "3px solid #7FFF00";
-        document.getElementById("die").style.border= "3px solid #DC143C";
 
         rnWorter();
     });
