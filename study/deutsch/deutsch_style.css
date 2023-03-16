@@ -1,4 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,900,400italic,700italic,900italic);        
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,900,400italic,700italic,900italic);   
+
+@media(hover: hover) and (pointer: fine) {
+    nav a:hover {
+        background: #ffffff;
+    }
+}
+
 html{
     background-color: #0A0A0A;
     justify-content: center;
