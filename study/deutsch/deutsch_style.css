@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,900,400italic,700italic,900italic);   
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700,900,400italic,700italic,900italic);        
 
 @media(hover: hover) and (pointer: fine) {
     nav a:hover {
@@ -20,13 +20,16 @@ h1 {
     font-size: max(8vh, 40px);
     font-weight: 900;
     line-height: 0px;
+    transition-duration: 0.4s;
 }
 h3 {
     font-size: min(2vh, 24px);
+    transition-duration: 0.4s;
 }
 hr {
     border: 7px solid #ffffff;
     border-radius: 6px;
+    transition-duration: 0.4s;
 }
 button  {
     background-color: #0A0A0A;
@@ -43,7 +46,7 @@ button  {
     font-size: max(3vh, 22px);
     font-weight: 900;
     margin: 4px 2px;
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
     cursor: pointer;
     border: 3px solid #555;
     border-radius: 10px;
@@ -58,7 +61,7 @@ button:disabled {
     border: 3px solid #1E90FF;
     color: #1E90FF;
 }
-.derButton:hover {
+.derButton:active {
     color: #ffffff;
     border-color: #1E90FF;
     background-color: #1E90FF;
@@ -67,7 +70,7 @@ button:disabled {
     border: 3px solid #7FFF00;
     color: #7FFF00;
 }
-.dasButton:hover {
+.dasButton:active {
     color: #ffffff;
     border-color: #7FFF00;
     background-color: #7FFF00;
@@ -76,12 +79,12 @@ button:disabled {
     border: 3px solid #DC143C;
     color: #DC143C;
 }
-.dieButton:hover {
+.dieButton:active {
     color: #ffffff;
     border-color: #DC143C;
     background-color: #DC143C;
 }
-button:hover {
+button:active {
     border: 3px solid #ccc
 }
 table{
@@ -91,6 +94,7 @@ label{
     display: block;
     font-weight: 400;
     font-size: 2vh;
+    transition-duration: 0.4s;
 }
 input {
     background-color: #0A0A0A;
