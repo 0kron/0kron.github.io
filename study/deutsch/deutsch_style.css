@@ -41,6 +41,12 @@ button  {
     border: 3px solid #555;
     border-radius: 10px;
 }
+button:disabled {
+    pointer-events: none;
+    color: #808080;
+    background-color: #0A0A0A;
+    border: 3px solid #808080;
+}
 .derButton {
     border: 3px solid #1E90FF;
     color: #1E90FF;
