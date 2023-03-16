@@ -8,6 +8,7 @@ let c_artikel = -1;
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
 let k6_worter = [
     ["Tätigkeit", "Actividad/Ocupación", 2, 0],
     ["Termin", "Cita/Plazo", 0, 0],
