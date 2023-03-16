@@ -1,5 +1,13 @@
 let artikel = ["der", "das", "die"];
+let artikel_color = ["#1E90FF", "#7FFF00", "#DC143C"]
+let w_lernen = [];
+let w_gelernt = [];
+let past_ind = -1;
+let c_artikel = -1;
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 let k6_worter = [
     ["Tätigkeit", "Actividad/Ocupación", 2, 0],
     ["Termin", "Cita/Plazo", 0, 0],
@@ -57,33 +65,89 @@ let k6_worter = [
     ["Fahrer", "Conductor", 0, 0],
 ];
 
-let k6_lernen = [];
-let k6_gelernt = [];
+
+lernenFilling();
+rnWorter();
 
 document.getElementById("der").onclick = function(){
-    check();
+    check(0);
 }
 
 document.getElementById("das").onclick = function(){
-    check();
+    check(1);
 }
 
 document.getElementById("die").onclick = function(){
-    check();
+    check(2);
+}
+
+function lernenFilling(){
+    let aux = 10 - w_lernen.length;
+    while (aux > 0){
+        let temp_wort = k6_worter[Math.floor(Math.random() * k6_worter.length)];
+        if (!w_lernen.includes(temp_wort)){
+            w_lernen.push(temp_wort);
+            aux --;
+        }
+    }
 }
 
 
+function check(art){
+    document.getElementById("der").disabled = true; 
+    document.getElementById("das").disabled = true; 
+    document.getElementById("die").disabled = true; 
+    document.getElementById("der").style.color = "#808080"; 
+    document.getElementById("das").style.color = "#808080"; 
+    document.getElementById("die").style.color = "#808080";
+    document.getElementById("der").style.border= "3px solid #808080";
+    document.getElementById("das").style.border= "3px solid #808080";
+    document.getElementById("die").style.border= "3px solid #808080";
+    if (art == c_artikel){
+        w_lernen[past_ind][3]++;
+        document.getElementById("topBar").style.border = "7px solid #00ff00";
+        document.getElementById("botBar").style.border = "7px solid #00ff00";
+        document.getElementById("wort").innerHTML = artikel[art]+" "+w_lernen[past_ind][0];
+        document.getElementById("wort").style.color = artikel_color[art];
+    }
+    else{
+        w_lernen[past_ind][3] = 0;
+        document.getElementById("topBar").style.border = "7px solid #ff0000";
+        document.getElementById("botBar").style.border = "7px solid #ff0000";
+        document.getElementById("wort").innerHTML = artikel[c_artikel]+" "+w_lernen[past_ind][0];
+        document.getElementById("wort").style.color = artikel_color[c_artikel];
+    }
+    sleep(1750).then(() => {
+        document.getElementById("topBar").style.border = "7px solid #ffffff";
+        document.getElementById("botBar").style.border = "7px solid #ffffff";
+        document.getElementById("wort").style.color = "#ffffff";
+        document.getElementById("der").disabled = false; 
+        document.getElementById("das").disabled = false; 
+        document.getElementById("die").disabled = false;
+        document.getElementById("der").style.color = "#1E90FF"; 
+        document.getElementById("das").style.color = "#7FFF00"; 
+        document.getElementById("die").style.color = "#DC143C";
+        document.getElementById("der").style.border= "3px solid #1E90FF";
+        document.getElementById("das").style.border= "3px solid #7FFF00";
+        document.getElementById("die").style.border= "3px solid #DC143C";
 
-function check(){
+        rnWorter();
+    });
 
+   
 };
 
-function rmWorter(){
-
+function rnWorter(){
+    let ind = Math.floor(Math.random() * w_lernen.length);
+    while (ind != past_ind){
+        document.getElementById("wort").innerHTML = w_lernen[ind][0];
+        document.getElementById("sig").innerHTML = w_lernen[ind][1];
+        past_ind = ind;
+    }
+    c_artikel = w_lernen[ind][2];
 };
 
 function gelernt(){
-
 };
 
 function vergesen(){
