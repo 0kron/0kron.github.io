@@ -103,6 +103,8 @@ function check(art){
         w_lernen[past_ind][3]++;
         document.getElementById("topBar").style.border = "7px solid #00ff00";
         document.getElementById("botBar").style.border = "7px solid #00ff00";
+        document.getElementById("title").style.color = "#00ff00";
+        document.getElementById("credits").style.color = "#00ff00";
         document.getElementById("wort").innerHTML = artikel[art]+" "+w_lernen[past_ind][0];
         document.getElementById("wort").style.color = artikel_color[art];
     }
@@ -110,6 +112,8 @@ function check(art){
         w_lernen[past_ind][3] = 0;
         document.getElementById("topBar").style.border = "7px solid #ff0000";
         document.getElementById("botBar").style.border = "7px solid #ff0000";
+        document.getElementById("title").style.color = "#ff0000";
+        document.getElementById("credits").style.color = "#ff0000";
         document.getElementById("wort").innerHTML = artikel[c_artikel]+" "+w_lernen[past_ind][0];
         document.getElementById("wort").style.color = artikel_color[c_artikel];
     }
@@ -117,6 +121,8 @@ function check(art){
         document.getElementById("topBar").style.border = "7px solid #ffffff";
         document.getElementById("botBar").style.border = "7px solid #ffffff";
         document.getElementById("wort").style.color = "#ffffff";
+        document.getElementById("title").style.color = "#ffffff";
+        document.getElementById("credits").style.color = "#ffffff";
         document.getElementById("der").disabled = false; 
         document.getElementById("das").disabled = false; 
         document.getElementById("die").disabled = false;
