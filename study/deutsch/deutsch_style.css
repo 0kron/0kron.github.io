@@ -1,11 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700,900,400italic,700italic,900italic);        
-
-@media(hover: hover) and (pointer: fine) {
-    nav a:hover {
-        background: #ffffff;
-    }
-}
-
 html{
     background-color: #0A0A0A;
     justify-content: center;
@@ -20,16 +13,13 @@ h1 {
     font-size: max(8vh, 40px);
     font-weight: 900;
     line-height: 0px;
-    transition-duration: 0.4s;
 }
 h3 {
     font-size: min(2vh, 24px);
-    transition-duration: 0.4s;
 }
 hr {
     border: 7px solid #ffffff;
     border-radius: 6px;
-    transition-duration: 0.4s;
 }
 button  {
     background-color: #0A0A0A;
@@ -46,47 +36,50 @@ button  {
     font-size: max(3vh, 22px);
     font-weight: 900;
     margin: 4px 2px;
-    transition-duration: 0.2s;
+    transition-duration: 0.4s;
     cursor: pointer;
     border: 3px solid #555;
     border-radius: 10px;
 }
-button:disabled {
-    pointer-events: none;
-    color: #808080;
-    background-color: #0A0A0A;
-    border: 3px solid #808080;
-}
 .derButton {
+    color: #ffffff;
+    background-color: #1E90FF;
     border: 3px solid #1E90FF;
-    color: #1E90FF;
 }
 .derButton:active {
-    color: #ffffff;
+    color: #1E90FF;
     border-color: #1E90FF;
-    background-color: #1E90FF;
+    background-color: #0A0A0A;
 }
 .dasButton {
+    color: #ffffff;
+    background-color: #7FFF00;
     border: 3px solid #7FFF00;
-    color: #7FFF00;
 }
 .dasButton:active {
-    color: #ffffff;
+    color: #7FFF00;
     border-color: #7FFF00;
-    background-color: #7FFF00;
+    background-color: #0A0A0A;
 }
 .dieButton {
+    color: #ffffff;
+    background-color: #DC143C;
     border: 3px solid #DC143C;
-    color: #DC143C;
 }
 .dieButton:active {
-    color: #ffffff;
+    color: #DC143C;
     border-color: #DC143C;
-    background-color: #DC143C;
+    background-color: #0A0A0A;
 }
 button:active {
     border: 3px solid #ccc
 }
+button:disabled {
+    border: 3px solid #767676;
+    color: #767676;
+    background-color: #0A0A0A;
+}
+
 table{
     text-align: center;
 }
@@ -94,7 +87,6 @@ label{
     display: block;
     font-weight: 400;
     font-size: 2vh;
-    transition-duration: 0.4s;
 }
 input {
     background-color: #0A0A0A;
@@ -144,7 +136,6 @@ details[open] summary:before {
 summary:after {
 	content: '';
 	display: inline-block;
-	float: right;
 	width: .5rem;
 	height: .5rem;
 	border-bottom: 1px solid currentColor;
@@ -221,4 +212,18 @@ input[type=radio]:after {
 
 ul.list {
 	counter-reset: labels;
+}
+
+select{
+    color: #ffffff;
+    font: 2vh 'Raleway', sans-serif;
+    font-weight: 700;
+    border: 3px solid #0A0A0A;
+    border-radius: 6px;
+    background-color: #0A0A0A;
+    transition: 0.3s;
+}
+select:active{
+    border: 3px solid #ffffff;
+    border-radius: 6px;
 }
