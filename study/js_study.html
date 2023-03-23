@@ -1,154 +1,224 @@
-let artikel = ["der", "das", "die"];
-let artikel_color = ["#1E90FF", "#7FFF00", "#DC143C"]
-let w_lernen = [];
-let w_gelernt = [];
-let past_ind = -1;
-let c_artikel = -1;
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-let k6_worter = [
-    ["Tätigkeit", "Actividad/Ocupación", 2, 0],
-    ["Termin", "Cita/Plazo", 0, 0],
-    ["Ärger", "Enojo", 0, 0],
-    ["Bahn", "Tren", 2, 0],
-    ["Fahrplan", "Horario/Itinerario", 0, 0],
-    ["Zugverbindung", "Enlace de Tren", 2, 0],
-    ["Durchsage", "Mensaje", 2, 0],
-    ["Wagen", "Vehículo", 0, 0],
-    ["Geschäftreise", "Viaje de Negocios", 2, 0],
-    ["Hinfahrt", "Viaje de ida", 2, 0],
-    ["Rückfahrt", "Viaje de regreso", 2, 0],
-    ["Klasse", "Clase", 2, 0],
-    ["Fahrkarte", "Pasaje", 2, 0],
-    ["Gang", "Pasillo", 0, 0],
-    ["Ermäßigung", "Rebaja", 2, 0],
-    ["Band", "Banda", 2, 0],
-    ["Musiker", "Músico", 0, 0],
-    ["Sängerin", "Cantante", 2, 0],
-    ["Alben", "Álbum", 1, 0],
-    ["Trainer", "Entrenador", 0, 0],
-    ["Berufswunsch", "Aspiración Profesional", 0, 0],
-    ["Neuanfang", "Reinicio", 0, 0],
-    ["Chance", "Oportunidad", 2, 0],
-    ["Umwelt", "Entorno", 2, 0],
-    ["Plastik", "Plástico", 1, 0],
-    ["Gehalt", "Sueldo", 1, 0],
-    ["Risiko/Risiken", "Riesgo", 1, 0],
-    ["Übersetzerin", "Traductor", 2, 0],
-    ["Chirurg", "Cirujano", 0, 0],
-    ["Herz", "Corazón", 1, 0],
-    ["Oberärztin", "Médico Adjunto", 2, 0],
-    ["Leiter", "Gerente/Director", 0, 0],
-    ["Lastwagen/Lkw", "Camión", 0, 0],
-    ["Freiheit", "Libertad", 2, 0],
-    ["Telefonat", "Llamada", 1, 0],
-    ["Anrufbeantworter", "Buzón de Voz", 0, 0],
-    ["Blatt", "Hoja", 1, 0],
-    ["Arbeitstag", "Jornada Laboral", 0, 0],
-    ["Betrieb", "Empresa", 0, 0],
-    ["Fabrik", "Fábrica", 2, 0],
-    ["Maschine", "Máquina", 2, 0],
-    ["Roboter", "Robot", 0, 0],
-    ["Digitalisierung", "Digitalización", 2, 0],
-    ["Austausch", "Intercambio", 0, 0],
-    ["Zusammenarbeit", "Cooperación", 2, 0],
-    ["Wissen", "Conocimiento", 1, 0],
-    ["Kompetenz", "Competencia", 2, 0],
-    ["Hausarbeit", "Tareas Domésticas", 2, 0],
-    ["Bier", "Cerveza", 1, 0],
-    ["Schritt", "Paso", 0, 0],
-    ["Freiertag", "Vacaciones", 0, 0],
-    ["Jahrhundert", "Siglo", 1, 0],
-    ["Verkehrsmittel", "Medio de Transporte", 1, 0],
-    ["Fahrer", "Conductor", 0, 0],
-];
-
-
-lernenFilling();
-rnWorter();
-
-document.getElementById("der").onclick = function(){
-    check(0);
-}
-
-document.getElementById("das").onclick = function(){
-    check(1);
-}
-
-document.getElementById("die").onclick = function(){
-    check(2);
-}
-
-function lernenFilling(){
-    let aux = 10 - w_lernen.length;
-    while (aux > 0){
-        let temp_wort = k6_worter[Math.floor(Math.random() * k6_worter.length)];
-        if (!w_lernen.includes(temp_wort)){
-            w_lernen.push(temp_wort);
-            aux --;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Study</title>
+    <style>
+        html{
+            background-color: #eeeeee;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Times New Roman', monospace;
         }
-    }
-}
+        body {
+            background-color: #eeeeee;
+            color: #000000;
+        }
+        h1 {
+            font-size: 50px;
+        }
+        h2 {
+            font-size: 30px;
+        }
+        hr {
+            border: 2px solid #ccc;
+        }
+        button  {
+            background-color: #eeeeee;
+            border: none;
+            display: inline-block;
+            color: #000000;
+            padding: 15px 30%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border: 3px solid #ccc;
+        }
+        button:hover {
+            border: 3px solid #555
+        }
+        table{
+            text-align: center;
+        }
+        label{
+            display: block;
+            font-size: 50px;
+        }
+        input {
+            background-color: #eeeeee;
+            color:#000000;
+            width: 90%;
+            padding: 6px 15px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+        }
+        input:hover {
+            border: 3px solid #555;
+        }
+        input[type=checkbox] {
+         position: relative;
+	       cursor: pointer;
+        }
+        select{
+            width: 100%;
+            padding: 6px 15px;
+            border: 3px solid #ccc;
+            background-color: #eee;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        select:hover{
+            border: 3px solid #555;
+        }
+        
+    </style>
+</head>
+<body>
+    <!--Título-->
+    <div style="width: 100%; height: 100%; margin: 0px; display: flex; justify-content: center;">
+        <div style="width: 480px; height: 100%; ">
+        <br><br>
+        <h1>Cosas (que) pasan</h1>
+        <p style="font-size: 18px;">por 0Kron</p>
+        <!--COUNTER-->
+        <hr>
+        <h2>Counter</h2>
+        <table width="100%">
+            <tr>
+                <td>-</td>
+                <td><label id="countLabel">0</label></td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><button id="decrease">Decrease</button></td>
+                <td><button id="reset">Reset</button></td>
+                <td><button id="increase">Increase</button></td>
+            </tr>
+        </table>
 
+        <br><br>
+        <hr>
+        <h2>RNG Generator</h2>
+        <table width="100%" style="text-align: center;">
+            <tr>
+                <td></td>
+                <td><label id="rng_out"></label></td>
+                <td></td>
+            </tr>
+        </table>
+        <table width="100%" style="text-align: left; padding: 15px; font-size: 20px;">
+            <tr>
+                <td>Minimum Value</td>
+                <td><input type="number" value="1" id="rng_min"></td>
+            </tr>
+            <tr>
+                <td>Maximum Value</td>
+                <td><input type="number" value="20" id="rng_max"></td>
+            </tr>
+            <tr>
+                <td><button id="rng_clear" style="width: 90%;">Reset</button></td>
+                <td><button id="rng_generate" style="width: 90%;">Generate</button></td>
+            </tr>
+        </table>
+        <br><hr>
 
-function check(art){
-    document.getElementById("der").disabled = true; 
-    document.getElementById("das").disabled = true; 
-    document.getElementById("die").disabled = true; 
-
-    if (art == c_artikel){
-        w_lernen[past_ind][3]++;
-        document.getElementById("topBar").style.border = "7px solid #00ff00";
-        document.getElementById("botBar").style.border = "7px solid #00ff00";
-        document.getElementById("title").style.color = "#00ff00";
-        document.getElementById("credits").style.color = "#00ff00";
-        document.getElementById("gelernen").style.color = "#00ff00";
-        document.getElementById("wort").innerHTML = artikel[art]+" "+w_lernen[past_ind][0];
-        document.getElementById("wort").style.color = artikel_color[art];
-    }
-    else{
-        w_lernen[past_ind][3] = 0;
-        document.getElementById("topBar").style.border = "7px solid #ff0000";
-        document.getElementById("botBar").style.border = "7px solid #ff0000";
-        document.getElementById("title").style.color = "#ff0000";
-        document.getElementById("credits").style.color = "#ff0000";
-        document.getElementById("gelernen").style.color = "#ff0000";
-        document.getElementById("wort").innerHTML = artikel[c_artikel]+" "+w_lernen[past_ind][0];
-        document.getElementById("wort").style.color = artikel_color[c_artikel];
-    }
-    sleep(1750).then(() => {
-        document.getElementById("topBar").style.border = "7px solid #ffffff";
-        document.getElementById("botBar").style.border = "7px solid #ffffff";
-        document.getElementById("wort").style.color = "#ffffff";
-        document.getElementById("title").style.color = "#ffffff";
-        document.getElementById("credits").style.color = "#ffffff";
-        document.getElementById("gelernen").style.color = "#ffffff";
-        document.getElementById("der").disabled = false; 
-        document.getElementById("das").disabled = false; 
-        document.getElementById("die").disabled = false;
-
-        rnWorter();
-    });
-
-   
-};
-
-function rnWorter(){
-    let ind = Math.floor(Math.random() * w_lernen.length);
-    while (ind != past_ind){
-        document.getElementById("wort").innerHTML = w_lernen[ind][0];
-        document.getElementById("sig").innerHTML = w_lernen[ind][1];
-        past_ind = ind;
-    }
-    c_artikel = w_lernen[ind][2];
-};
-
-function gelernt(){
-};
-
-function vergesen(){
-
-};
+        <!--CHECKBOX INTERACTIONS-->
+        <h2>Tienes (buen) gusto?</h2>
+        <p style="font-size: 24px;">Llena el siguiente cuestionario para descibrirlo:</p><br>
+        <label id="veredicto" style="font-size: 24px; text-align: center;"></label><br>
+        <table style="font-size: 20px; width: 100%;">
+            <tr>
+                <td width="15%" style="text-align: left;"><input type="checkbox" id="batman"></td>
+                <td style="text-align: left;"><label for="batman" style="font-size: 20px; cursor: pointer;">He visto Batman LEGO</label></td>
+            </tr>
+            <tr>
+                <td style="text-align: right;"><input type="checkbox" id="bat_gusto"></td>
+                <td style="text-align: left;"><label for="bat_gusto" style="font-size: 20px; cursor: pointer;">Me gustó</label></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><input type="checkbox" id="eva"></td>
+                <td style="text-align: left;"><label for="eva" style="font-size: 20px; cursor: pointer;">He visto Neon Genesis Evangelion</label></td>
+            </tr>
+            <tr>
+                <td style="text-align: right;"><input type="checkbox" id="eva_gusto"></td>
+                <td style="text-align: left;"><label for="eva_gusto" style="font-size: 20px; cursor: pointer;">Me gustó</label></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><input type="checkbox" id="panda"></td>
+                <td style="text-align: left;"><label for="panda" style="font-size: 20px; cursor: pointer;">He visto Kung Fu Panda</label></td>
+            </tr>
+            <tr>
+                <td style="text-align: right;"><input type="checkbox" id="panda_gusto"></td>
+                <td style="text-align: left;"><label for="panda_gusto" style="font-size: 20px; cursor: pointer;">Me gustó</label></td>
+            </tr>
+            <tr>
+                <td><button id="Breset" style="padding: 15px 15%;">Reset</button></td>
+                <td><button id="Bveredicto" style="width: 100%;">Veredicto</button></td>
+            </tr>
+        </table>
+        <hr>
+        <h2>Convertidor de Unidades</h2>
+        <table width="100%" style="text-align: left; padding: 0px; font-size: 20px;">
+            <tr>
+                <td>
+                    <form>
+                        <select id="convert_type" name="convert_type" placeholder="Temperatura">
+                        <option value="temp">Temperatura</option>
+                        <option value="length">Longitud</option>
+                        <option value="speed">Velocidad</option>
+                        <option value="storage">Almacenamiento</option>
+                        <option value="angle">Ángulo</option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <table width="100%" style="padding: 0px; font-size: 20px;">
+                <tr>
+                    <td><input type="number" value="0" id="in_left" style="width: 100%; font-size: 25px;"></td>
+                    <td><input type="number" value="0" id="in_right" style="width: 100%; font-size: 25px;"></td>
+                </tr>
+                <tr>
+                    <td id="selecter_left">
+                        <form>
+                            <select id="convert_unit_left">
+                                <option value="cel">Celsius (ºC)</option>
+                                <option value="fahr">Fahrenheit (F)</option>
+                                <option value="kelvin">Kelvin (K)</option>
+                            </select>
+                        </form>
+                    </td>
+                    <td id="selecter_right">
+                        <form>
+                            <select id="convert_unit_right">
+                            <option value="cel">Celsius (ºC)</option>
+                            <option value="fahr">Fahrenheit (F)</option>
+                            <option value="kelvin">Kelvin (K)</option>
+                            </select>
+                        </form>
+                    </td>
+                </tr>
+                </table>
+            </tr>
+        </table>
+        <script src="study.js"></script>
+        <br><br>
+        <hr>
+        <h1></h1>
+        <hr>
+        <br><br><br><br><br><br><br>
+    </div>
+    </div>
+    <script src="study_2.js"></script>
+</body>
+</html>
