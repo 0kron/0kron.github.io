@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="classes">
+  
+<head>
+  <title>okron - archivo</title>
+  <link rel="stylesheet" href="style_blog.css">
+</head>
+
+<body>
+  <div class="main">
+  <h1><a href="../directory.html" style="text-align: left;">[okron ~]$<span class="blink">_</span></a></h1>
+  <br>
+  <p class="folders" onclick="mostrar_listado('diarias')"><b>diarias/</b></h3>
+  <div id="diarias" class="cat">
+    <a href="diarias/21_02_25.html">&emsp;&emsp;21.02.25.html</a> <br>
+    <a href="diarias/21_02_25.html">&emsp;&emsp;21.02.25.html</a> <br>
+    <a href="diarias/21_02_25.html">&emsp;&emsp;21.02.25.html</a> <br>
+  </div>
+  <p class="folders" onclick="mostrar_listado('musica')">musica/</h3>
+  <div id="musica" class="cat">
+    <a href="diarias/21_02_25.html">&emsp;&emsp;21.02.25.html</a> <br>
+    <a href="diarias/21_02_25.html">&emsp;&emsp;21.02.25.html</a> <br>
+    <a href="diarias/21_02_25.html">&emsp;&emsp;21.02.25.html</a> <br>
+  </div>
+  <p class="folders" onclick="mostrar_listado('curiosidades')">curiosidades/</h3>
+    <div id="curiosidades" class="cat">
+      <a href="diarias/21_02_25.html">&emsp;&emsp;21.02.25.html</a> <br>
+      <a href="diarias/21_02_25.html">&emsp;&emsp;21.02.25.html</a> <br>
+      <a href="diarias/21_02_25.html">&emsp;&emsp;21.02.25.html</a> <br>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+  function mostrar_listado(selDiv) {
+    var x = document.getElementById(selDiv);
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+</script>
