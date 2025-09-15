@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
 html {
-      background-color: #1b1b1b;
+      background-color: #0b0b0b;
       align-items: center;
-      color: #eadbb2;
+      color: #fbf1c7;
       display: flex;
       font-family: 'Ubuntu Mono', monospace;
       font-size: 25px;
@@ -23,7 +23,7 @@ html {
       grid-column: 1 / -1;
       margin: 0;
       text-align: center;
-      color: #EADBB2;
+      color: #fbf1c7;
     }
     .blinking {
       animation: opacity 1s ease-in-out infinite;
@@ -45,7 +45,7 @@ html {
 
     a:focus,
     a:hover {
-      color: #668f8b;
+      color: #42a65b;
     }
 
     nav {
@@ -66,11 +66,11 @@ html {
     li:first-child {
       font-weight: bold;
       line-height: 2em;
-      color: #668f8b;
+      color: #42a65b;
     }
 
     img {
-      border: 2px solid #EADBB2;
+      border: 2px solid #fbf1c7;
       height: auto;
       object-fit: cover;
       object-position: 50% 100%;
@@ -82,7 +82,7 @@ html {
 input {
   background-color: unset;
   font: 16px 'Ubuntu Mono', monospace;
-  color: #EADBB2;
+  color: #fbf1c7;
   height: 100%;
   width: 90%;
   border-top-style: hidden;
