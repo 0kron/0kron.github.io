@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Guess Who - Aleph_0 Edition</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div class="chalkboard">
+        <h1>Adivina Quién: Academia \(\aleph_0\)</h1>
+        
+        <div class="controls">
+            <select id="categorySelect">
+                <option value="personas">Categoría: Personas</option>
+                <option value="props">Categoría: Conceptos (Props)</option>
+                <option value="class">Categoría: Clases</option>
+            </select>
+            
+            <button id="btnReset">Reiniciar Tablero</button>
+            <button id="btnRandom">¿Quién soy? (Azar)</button>
+            <button id="btnVictory">¡VICTORIA!</button>
+        </div>
+
+        <div id="gameGrid" class="grid-container">
+            </div>
+        
+        <div class="chalk-ledge"></div>
+    </div>
+
+    <div id="modalPicker" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2 style="font-family: 'Special Elite', cursive; color: #fff;">Tu objetivo es:</h2>
+            <hr style="border: 1px dashed rgba(255,255,255,0.3); margin-bottom: 20px;">
+            <div id="pickerDisplay">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&family=Fraunces:opsz,wght@9..144,700&display=swap');
+
+:root {
+    --chalk-white: #f0f0f0;
+    --board-green: #2e4d3d;
+    --frame-color: #d4a373;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: var(--chalk-white);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+}
+
+.chalkboard {
+    background-color: var(--board-green);
+    border: 15px solid #5d4037; /* Marco de madera */
+    border-radius: 10px;
+    min-height: 90vh;
+    padding: 20px;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 2px 2px #444;
+    border-bottom: 2px dashed var(--chalk-white);
+    padding-bottom: 10px;
+}
+
+.grid-container {
+    display: grid;
+    /* Esto asegura exactamente 5 columnas */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    padding: 20px;
+    max-width: 800px; /* Opcional: para que no se estire infinito en pantallas ultra anchas */
+    margin: 0 auto;
+}
+
+.card {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: white;
+    border: 5px solid var(--frame-color);
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    filter: sepia(0.3); /* Look antiguo */
+}
+
+/* La Cruz para tachar */
+.card.eliminated::after {
+    content: "X";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 0, 0, 0.4);
+    color: white;
+    font-size: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Controles */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+button, select {
+    padding: 10px;
+    background: transparent;
+    border: 2px solid var(--chalk-white);
+    color: var(--chalk-white);
+    cursor: pointer;
+}
+
+button:hover { background: rgba(255,255,255,0.1); }
+
+/* Modal */
+.modal { display: none; position: fixed; z-index: 1; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
+.modal-content { background: var(--board-green); margin: 10% auto; padding: 20px; border: 5px solid white; width: 300px; text-align: center; }
+
+
+:root {
+    --chalk-white: rgba(255, 255, 255, 0.85);
+    --board-green: #2e4d3d;
+    --wood: #5d4037;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    min-height: 150px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--board-green);
+    border: 8px solid var(--wood);
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5), inset 0 0 30px rgba(0,0,0,0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+}
+
+/* Contenido de la carta (Texto o LaTeX) */
+.card-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* CONTROL DE TEXTO */
+    padding: 5px;
+    box-sizing: border-box;
+    word-wrap: break-word;     /* Rompe palabras largas */
+    overflow-wrap: break-word;
+    word-break: break-word;    /* Fuerza el quiebre si es necesario */
+    hyphens: auto;             /* Añade guiones si el navegador lo soporta */
+    
+    /* Tamaño base que escala con el ancho de la carta */
+    font-size: clamp(1.2rem, 4vw, 2.8rem); 
+    line-height: 1;
+}
+
+/* Ajuste específico para cuando hay LaTeX */
+.card-content .mjx-chtml {
+    max-width: 100% !important;
+    font-size: 0.9em !important; /* Escala un poco hacia abajo el LaTeX si es muy grande */
+}/* Estilo específico para Personas (Gorro de graduación) */
+
+.card.persona::before {
+    content: "🎓";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+/* Efecto de Eliminado (Cruz de tiza roja) */
+.card.eliminated::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(45deg, transparent 47%, #ff5555 48%, #ff5555 52%, transparent 53%),
+        linear-gradient(-45deg, transparent 47%, #ff5555 48%, #ff5555 52%, transparent 53%);
+    opacity: 0.8;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.category-class .card-content {
+    color: #ffd8a8; /* Un naranja tiza muy suave */
+}
+
+/* Categoría Personas: Mayúsculas y Sans Serif de impacto */
+.cat-personas .card-content {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+/* Categoría Props: Estilo máquina de escribir/notas */
+.cat-props .card-content {
+    font-family: 'Special Elite', cursive;
+    font-size: clamp(0.8rem, 6vw, 1.8rem);
+}
+
+/* Categoría Class: Serif formal universitaria */
+.cat-class .card-content {
+    font-family: 'Fraunces', serif;
+    color: #ffd8a8; /* Tiza naranja */
+}
